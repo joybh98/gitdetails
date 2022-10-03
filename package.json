@@ -1,6 +1,7 @@
 {
   "type": "module",
   "dependencies": {
+    "bulma": "^0.9.4",
     "cheerio": "^1.0.0-rc.12",
     "node-fetch": "^3.2.10"
   }
