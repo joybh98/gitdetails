@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Hello Bulma!</title>
+    <title>Get Userdetails</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
   </head>
   <body>
@@ -14,6 +14,17 @@
             <input class="input" type="text" placeholder="Text input" id="username">
             <!--<button type="submit" class="button">Submit</button>-->
         </form>
+    </div>
+  </section>
+
+  <section class="userDetails is-sr-only" id="userDetails">
+    <div class="card">
+      <div class="card-content">
+        <h4 class="title is-4" id="username"></h4>
+        <p id="name">Name: </p>
+        <p id="followers">Followers: </p>
+        <p id="following">Following: </p>
+      </div>
     </div>
   </section>
   <script src="script.js"></script>

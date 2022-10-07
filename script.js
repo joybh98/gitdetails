@@ -1,6 +1,7 @@
 let username="";
 
 document.querySelector(".input").addEventListener("change",function(event) {
+
     event.preventDefault();
     username=document.getElementById("username").value;
     //console.log(username);
@@ -22,11 +23,16 @@ document.querySelector(".input").addEventListener("change",function(event) {
         data=>{
             return ([data.login,data.name,data.followers,data.following]);
     });
-
+    document.getElementById("userDetails").className="userDetails is-inline-flex";
     const getDetails=()=>{
         userDetails.then((a)=>{
-            console.log(a);
+            //console.log(a);
+            document.getElementById("username").innerHTML=a[0];
+            document.getElementById("name").innerHTML=a[1];
+            document.getElementById("followers").innerHTML=a[2];
+            document.getElementById("following").innerHTML=a[3];
         })
     }
+
     getDetails();
 });
