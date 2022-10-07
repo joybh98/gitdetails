@@ -16,18 +16,17 @@ document.querySelector(".input").addEventListener("change",function(event) {
     const fullUrl=baseUrl+username;
 
     // get user endpoint, then getting the response as json
-    fetch(fullUrl).then(res=>res.json())
+    const userDetails=fetch(fullUrl).then(res=>res.json())
     // as json is our actual data check if we have the right data
     .then(
         data=>{
-            userdata.name=data.name;
-            userdata.email=data.email;
-            userdata.followers=data.followers
-        }).then(
-            let div = document.createElement('div');
-            div.className="card";
-            let text=document.createTextNode(userdata);
-            div.appendChild(text);
-            document.body.appendChild(div);
-        );
+            return ([data.login,data.name,data.followers,data.following]);
+    });
+
+    const getDetails=()=>{
+        userDetails.then((a)=>{
+            console.log(a);
+        })
+    }
+    getDetails();
 });
