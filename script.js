@@ -1,6 +1,6 @@
 let username="";
 
-document.querySelector(".input").addEventListener("change",function(event) {
+document.querySelector("form").addEventListener("submit",function(event) {
 
     event.preventDefault();
     username=document.getElementById("username").value;
