@@ -21,16 +21,18 @@ document.querySelector(".input").addEventListener("change",function(event) {
     // as json is our actual data check if we have the right data
     .then(
         data=>{
-            return ([data.login,data.name,data.followers,data.following]);
+            //console.log(data);
+            return ([data.avatar_url,data.login,data.name,data.followers,data.following]);
     });
-    document.getElementById("userDetails").className="userDetails is-inline-flex";
+    document.getElementById("userDetails").className="userDetails is-flex";
     const getDetails=()=>{
         userDetails.then((a)=>{
             //console.log(a);
-            document.getElementById("username").innerHTML=a[0];
-            document.getElementById("name").innerHTML=a[1];
-            document.getElementById("followers").innerHTML=a[2];
-            document.getElementById("following").innerHTML=a[3];
+            document.getElementById("userimage").src=a[0];
+            document.getElementById("username").innerHTML=`Username: ${a[1]}`;
+            document.getElementById("name").innerHTML=`Name: ${a[2]}`;
+            document.getElementById("followers").innerHTML=`Followers: ${a[3]}`;
+            document.getElementById("following").innerHTML=`Following: ${a[4]}`;
         })
     }
 
